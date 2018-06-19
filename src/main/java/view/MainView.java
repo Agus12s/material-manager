@@ -11,10 +11,12 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MainView extends JFrame {
     public MainView() {
-        JPanel panel = createMainContainer();
+        final JPanel panel = createMainContainer();
         add(panel);
     }
 
@@ -114,12 +116,11 @@ public class MainView extends JFrame {
         gbcAddButton.anchor = GridBagConstraints.PAGE_END;
         gbcAddButton.insets = new Insets(5, 5, 5, 5);
         gridBagLayout.setConstraints(addButton, gbcAddButton);
-//        CODIGO PREPARADO PARA SIGUIENTE ISSUE.
-//        addButton.addActionListener(new ActionListener() {
-//            public void actionPerformed(ActionEvent e) {
-//                new NewIngredientView().setVisible(true);
-//            }
-//        });
+        addButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new NewItemView().setVisible(true);
+            }
+        });
         return addButton;
     }
 }
