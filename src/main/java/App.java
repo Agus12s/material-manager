@@ -1,3 +1,5 @@
+package main.java;
+
 import view.MainView;
 
 import javax.swing.JFrame;
